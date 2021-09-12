@@ -58,7 +58,7 @@ const chainInfos = [{
   instructionGuide:'https://docs.matic.network/docs/develop/metamask/config-matic',
   exchangeRouterAddress:'0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff',
   explorerUrl:'https://explorer-mainnet.maticvigil.com',
-  rpcUrl: 'https://rpc-mainnet.matic.network'
+  rpcUrl: 'https://polygon-rpc.com/'
 },{
   chainId:100,
   chainIcon:xdai,

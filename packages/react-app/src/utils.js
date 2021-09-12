@@ -5,7 +5,7 @@ import { ethers } from "ethers";
 import { formatUnits } from "ethers/lib/utils";
 const MAX_AMOUNT = '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'
 const ZERO_AMOUNT = '0x'
-const INFURA_KEY = '10c3a0fa44b94deba2a896658844a49c'
+const INFURA_KEY = 'b9bc6f40b5e24441862d355e0a0e3e0e'
 const C_KEY = 'ckey_125f8d62ef8b4410a92c2787d6c'
 
 export async function getMaticTokenBalances(address){
@@ -145,18 +145,18 @@ export async function getQuote(
 }
 
 export async function getBNB(){
-  const result = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=binancecoin%2C%20dai&vs_currencies=usd`)
+  const result = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=binancecoin%2C%20dai&vs_currencies=usd`, {mode: 'cors'})
   return await result.json()
 }
 
 // Matic derived price is actually ETH
 export async function getEth(){
-  const result = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd`)
+  const result = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd`, {mode: 'cors'})
   return await result.json()
 }
 
 export async function getDai(){
-  const result = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=dai&vs_currencies=usd`)
+  const result = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=dai&vs_currencies=usd`, {mode: 'cors'})
   return await result.json()
 }
 

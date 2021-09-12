@@ -14,7 +14,7 @@ import { getBalanceForAssetId, getRandomBytes32 } from "@connext/vector-utils";
 import { BigNumber } from "@ethersproject/bignumber";
 
 const routerPublicIdentifier =
-  "vector892GMZ3CuUkpyW8eeXfW2bt5W73TWEXtgV71nphXUXAmpncnj8";
+  "vector52rjrwRFUkaJai2J4TrngZ6doTUXGZhizHmrZ6J15xVv4YFgFC";
 
 const withdrawHelpers: { [chainId: number]: string } = {
   137: "0xD1CC3E4b9c6d0cb0B9B97AEde44d4908FF0be507",
@@ -25,13 +25,13 @@ const withdrawHelpers: { [chainId: number]: string } = {
 const chainProviders: { [chainId: number]: string } = {
   56: "https://bsc-dataseed.binance.org/",
   100: "https://rpc.xdaichain.com/",
-  137: "https://rpc-mainnet.matic.network",
+  137: "https://polygon-rpc.com/",
 };
 
 const chainJsonProviders: { [chainId: number]: providers.JsonRpcProvider } = {
   56: new JsonRpcProvider("https://bsc-dataseed.binance.org/"),
   100: new JsonRpcProvider("https://rpc.xdaichain.com/"),
-  137: new JsonRpcProvider("https://rpc-mainnet.matic.network"),
+  137: new JsonRpcProvider("https://polygon-rpc.com/"),
 };
 
 // TODO: FILL IN ADDRESSES
@@ -180,7 +180,7 @@ export const getChannelsForChains = async (
     }
     console.log("res.getValue(): ", res.getValue());
     const channelStateRes = await node.getStateChannel({
-      channelAddress: res.getValue(),
+      channelAddress: res.getValue().channelAddress,
     });
     if (channelStateRes.isError) {
       throw res.getError();

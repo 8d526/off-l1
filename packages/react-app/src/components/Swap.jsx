@@ -122,16 +122,19 @@ function Swap({
     toToken,
     toTokenPair,
     number;
-  const fromSymbol = "USDC";
+  const fromSymbol = "USDT";
+  fromToken = {id: "0xc2132d05d31c914a87c6611c10748aeb04b58e8f", decimals: 6}; //USDT on Polygon
+  fromTokenPair = {id: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174", decimals: 6}; //USDc on Polygon;
+  toToken = {id: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", decimals: 18}; //USDC on BSC
+  toTokenPair = {id: "0x55d398326f99059ff775485246999027b3197955", decimals: 18}; //USDT on Polygon
   if (combined.length > 0) {
     fromTokenData = combined.filter((c) => c.symbol === fromSymbol)[0];
     toTokenData = combined.filter((c) => c.symbol === symbol)[0];
-    fromToken = fromTokenData.data?.filter((d) => d?.exchangeName === from)[0];
-    fromTokenPair = toTokenData.data?.filter(
-      (d) => d?.exchangeName === from
-    )[0];
-    toToken = toTokenData.data?.filter((d) => d?.exchangeName === to)[0];
-    toTokenPair = fromTokenData.data?.filter((d) => d?.exchangeName === to)[0];
+    // fromToken = fromTokenData.data?.filter((d) => d?.exchangeName === from)[0];
+    fromToken = {id: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174", decimal: 6};
+    fromTokenPair = {id: "0x2791bca1f2de4661ed88a30c99a7a9449aa84174", decimal: 6};
+    toToken = {id: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", decimal: 18};
+    toTokenPair = {id: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", decimal: 18};
   }
 
   if (connextNode && fromExchange && toExchange && !fromChannel && !toChannel) {

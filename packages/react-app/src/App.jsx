@@ -68,6 +68,7 @@ function App({chainInfos}) {
   }, []);
   getBNB().then(r => {
     setBnbPrice(r.binancecoin.usd)
+    console.log(`bnb price is ${r.binancecoin.usd}`);
     chainInfos[0].unitPrice = r.binancecoin.usd
   })
   getEth().then(r => {

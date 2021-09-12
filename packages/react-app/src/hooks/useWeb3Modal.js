@@ -26,7 +26,7 @@ function useWeb3Modal(config = {}) {
           infuraId,
           rpc:{
             56: "https://bsc-dataseed1.defibit.io",
-            137: "https://rpc-mainnet.matic.network",
+            137: "https://polygon-rpc.com/",
             100: "https://xdai.poanetwork.dev",
           }
         },
